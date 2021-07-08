@@ -127,3 +127,22 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+music/med/3.ogg
+music/med/2.ogg
+music/med/1.ogg
+music/low/3.ogg
+music/low/2.ogg
+music/low/1.ogg
+music/high/3.ogg
+music/high/2.ogg
+music/high/1.ogg
+.idea/vcs.xml
+.idea/variable-music.iml
+.idea/modules.xml
+.idea/misc.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/inspectionProfiles/profiles_settings.xml
+music/med/1.ogg
+music/low/1.ogg
+music/high/1.ogg
+*.ogg
