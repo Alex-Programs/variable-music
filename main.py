@@ -21,6 +21,9 @@ low_thresh = -1
 mid_thresh = 100
 high_thresh = 180
 
+last_changed = 0
+minimum_run_time = 20
+
 class thread_hack():
     currently_playing = None
 
@@ -41,6 +44,9 @@ def random_in_dir(dirname):
 def on_press(key):
     keypresses.append(Keypress(key))
     amount = 0
+
+    if time.time() < last_changed + minimum_run_time:
+        return
 
     for key_n in keypresses:
         if key_n.time + period > time.time():
@@ -72,4 +78,6 @@ with Listener(
     listener.join()
 
 while True:
-    time.sleep(0.1)
+    time.sleep(1)
+    if time.time() > play_obj.song_end_time:
+        play_obj.play_song(random_in_dir(f"music/{thread_hack.currently_playing}/"))

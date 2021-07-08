@@ -12,9 +12,12 @@ class Player():
     def __init__(self):
         self.song1 = None
         self.song2 = None
+        self.song_end_time = None
 
     def play_song(self, song):
         song = get_song(song)
+        self.song_end_time = time.time() + song.get_length()
+
         if not self.song1:
             self.song1 = song
             self.song1.play()
